@@ -67,7 +67,7 @@ async function saveMovieDataToCSV(movieDataArray, file_name) {
     ],
   });
 
-  csvWriter
+  await csvWriter
     .writeRecords(movieDataArray)
     .then(() => console.log("The CSV file was written successfully"))
     .catch((err) => console.log("Failed to write CSV file:", err));
@@ -92,3 +92,5 @@ async function main() {
 }
 
 await main();
+
+export { sortByKey, mergeDeduplicateAndSortMovieArrays, saveMovieDataToCSV };
